@@ -1,0 +1,36 @@
+---
+title: "US Vehicle MPG Data"
+author: "Biqing Sheng"
+date: "2/18/2019"
+output: slidy_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Shiny App
+
+- The shiny application: https://pipposheng.shinyapps.io/DDPmpg/
+
+- The source code on Github: https://github.com/pipposheng/DDPfinalproject
+
+
+## Introduction to Analysis
+
+- The purpose of this study is to evaluate the fuel efficiency (MPG) of vehicles with different parameters.
+- The paramters considered in this study are: hp (horsepower), cyl(number of cylinder), gear (number of gear), and am (manual or auto transmission).
+- The prediction of MPG is based on hp for different cyl, gear, and am.
+
+## MPG Scatterplot
+
+```{r plot, message=FALSE, warning=FALSE}
+library(plotly)
+plot_ly(data = mtcars, x= ~hp, y = ~cyl, z = ~mpg, type = "scatter3d", color = ~factor(am))
+```
+
+## Conclusions
+
+- The user can select cylinder, Gear, and Transmission to get different output plots between mpg and hp.
+- The user can predict the fuel efficiency from the hp of the vehicle.
+- Due to the limited sample size, some plots are not shown correctly, and some predictions are not available.
